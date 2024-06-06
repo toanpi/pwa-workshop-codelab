@@ -26,6 +26,8 @@
     "comlink": "^4.4.1",
     "idb": "^8.0.0",
     "marked": "^12.0.2",
+    "path": "^0.12.7",
+    "url": "^0.11.3",
     "workbox-cacheable-response": "^7.1.0",
     "workbox-expiration": "^7.1.0",
     "workbox-recipes": "^7.1.0",

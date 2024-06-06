@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<!-- 
- Copyright 2021 Google LLC
+/*
+ Copyright 2022 Google LLC
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -13,17 +12,26 @@
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
- -->
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PWA Edit | Markdown Preview</title>
-    <link rel="stylesheet" href="/css/preview.css" />
-    <script type="module" src="/js/preview.js"></script>
-  </head>
-  <body>
-    <main class="preview"></main>
-  </body>
-</html>
+ */
+
+import { resolve, dirname } from 'path';
+
+const fileURLToPath = (url) => new URL(url).pathname;
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  build: {
+    emptyOutDir: false,
+    rollupOptions: {
+      input: {
+        'service-worker': resolve(__dirname, 'service-worker.js'),
+      },
+      output: {
+        format: 'iife',
+        entryFileNames: '[name].js',
+      },
+    },
+  },
+});

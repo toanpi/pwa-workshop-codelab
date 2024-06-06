@@ -14,8 +14,10 @@
  limitations under the License.
  */
 
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
 import { defineConfig } from 'vite';
+
+const __dirname = dirname(new URL(import.meta.url).pathname);
 
 export default defineConfig({
   build: {
