@@ -15,7 +15,7 @@
  */
 
  // Todo: Enable service worker later
-//  import './register_sw.js'
+//  import './register_sw.ts'
 
 window.addEventListener('DOMContentLoaded', async () => {
   // Set up install prompt
